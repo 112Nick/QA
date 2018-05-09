@@ -14,3 +14,9 @@ class MainForm(BaseElement):
         return  WebDriverWait(self.driver, 30, 0.1).until(
             EC.element_to_be_clickable((By.XPATH, self.MESSAGE_BUTTON)))
 
+
+
+    # def get_message_button(self):
+    #     return WebDriverWait(self.driver, 10, 0.1).until(
+    #             lambda d: d.find_element_by_xpath(self.MESSAGE_BUTTON).text
+    #         )

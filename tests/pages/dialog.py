@@ -9,8 +9,14 @@ class DialogPage(BasePage):
 
     def open_menu(self):
         dialog_form = DialogForm(self.driver)
-        dialog_form.get_menu_button().click()
-    
+        isIntercepted = True
+        while(isIntercepted):
+            try:
+                isIntercepted = False
+                dialog_form.get_menu_button().click()
+            except Exception as e:
+                isIntercepted = True
+                
     def write_and_send_message(self, message_text):
         dialog_form = DialogForm(self.driver)
         message_text_field = dialog_form.get_message_input()
@@ -47,3 +53,7 @@ class DialogPage(BasePage):
     def send_message_button_exists(self):
         dialog_form = DialogForm(self.driver)
         return dialog_form.get_send_message_button is not None
+
+    def no_messages_text_exists(self):
+        dialog_form = DialogForm(self.driver)
+        return dialog_form.get_no_messages_text() is not None

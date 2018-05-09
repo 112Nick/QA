@@ -11,9 +11,15 @@ class MessagePage(BasePage):
 
 
     def create_dialog(self):
-
         message_form = MessageForm(self.driver)
-        message_form.get_create_dialog_button().click()
+        err = True
+        while(err):
+            try:
+                err = False
+                message_form.get_create_dialog_button().click()
+            except Exception as e:
+                err = True
+       
     
     def choose_companion(self):
         companion_form = CompanionForm(self.driver)

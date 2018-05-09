@@ -4,5 +4,9 @@ from forms.main_form import MainForm
 class MainPage(BasePage):
     
     def open_messages(self):
+        BEFORE = self.driver.current_url
+        AFTER = self.driver.current_url
         main_form = MainForm(self.driver)
-        main_form.get_message_button().click()
+        while (BEFORE == AFTER):
+            main_form.get_message_button().click()
+            AFTER = self.driver.current_url

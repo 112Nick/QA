@@ -10,10 +10,7 @@ class ForwardMessageCompanionForm(BaseElement):
     def get_companion_button(self):
         return WebDriverWait(self.driver, 30, 0.1).until(
             EC.element_to_be_clickable((By.XPATH, self.COMPANION_BUTTON)))
-   
+
     def get_forward_message_button(self):
-        return WebDriverWait(self.driver, 30, 0.1).until(
+       return WebDriverWait(self.driver, 30, 0.1).until(
             EC.element_to_be_clickable((By.XPATH, self.FORWARD_MESSAGE_BUTTON)))
-
-
-       
