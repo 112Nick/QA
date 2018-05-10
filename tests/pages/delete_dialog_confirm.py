@@ -3,10 +3,10 @@ from forms.delete_dialog_confirm_form import DeleteDialogConfirmForm
 
 
 
-class DeleteDialogConfirmPage(BasePage):
+class ConfirmPage(BasePage):
 
 
-    def delete_dialog(self):
+    def confirm(self):
 
         delete_dialog_confirm_form = DeleteDialogConfirmForm(self.driver)
 

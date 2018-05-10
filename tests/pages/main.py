@@ -8,5 +8,7 @@ class MainPage(BasePage):
         AFTER = self.driver.current_url
         main_form = MainForm(self.driver)
         while (BEFORE == AFTER):
+            print 'open messages'
+            
             main_form.get_message_button().click()
             AFTER = self.driver.current_url

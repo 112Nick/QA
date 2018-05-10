@@ -14,6 +14,8 @@ class MessagePage(BasePage):
         message_form = MessageForm(self.driver)
         err = True
         while(err):
+            print 'create dialog'
+            
             try:
                 err = False
                 message_form.get_create_dialog_button().click()
